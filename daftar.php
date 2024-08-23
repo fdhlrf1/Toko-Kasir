@@ -6,18 +6,26 @@ require 'includes/functions.php';
 
 if (isset($_POST['kirim'])) {
 
+    $status = register($_POST);
     //cek apakah data berhasil ditambahkan atau tidak 
-    if (register($_POST) > 0) {
+    if ($status == -1) {
         echo "
         <script>
-         alert('data berhasil ditambahkan');
+         alert('email sudah digunakan');
+         document.location.href = 'daftar.php';
+         </script>
+        ";
+    } elseif ($status > 0) {
+        echo "
+        <script>
+         alert('registrasi berhasil');
          document.location.href = 'index.php';
          </script>
         ";
     } else {
         echo "
         <script>
-         alert('data gagal ditambahkan');
+         alert('registrasi gagal');
          document.location.href = 'index.php';
          </script>
         ";

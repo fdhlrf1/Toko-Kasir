@@ -154,6 +154,15 @@ function register($data)
     $namatoko = htmlspecialchars($data['namatoko']);
     $password = htmlspecialchars($data['password']);
 
+    // Cek apakah email sudah terdaftar
+    $result = mysqli_query($conn, "SELECT email FROM tuser WHERE email = '$email'");
+
+    if (mysqli_fetch_assoc($result)) {
+        // Jika email sudah terdaftar
+        return -1; // Kode kesalahan, bisa diubah sesuai kebutuhan
+    }
+
+
     $hashedPass = password_hash($password, PASSWORD_DEFAULT);
 
     $query = "INSERT INTO tuser VALUES ('', '$username', '$namatoko', '$email', '$hashedPass')";
