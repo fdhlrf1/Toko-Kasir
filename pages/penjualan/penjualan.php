@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
         echo "
         <script>
          alert('transaksi berhasil');
-         document.location.href = 'penjualan.php';
+         document.location.href = '../laporan/laporan.php';
          </script>
         ";
         // header("Location: penjualan.php?status=sukses");

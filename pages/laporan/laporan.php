@@ -78,6 +78,8 @@ $transaksi = query("SELECT * FROM thtransaksi WHERE id_user = '$id_user' ORDER B
                         <tr>
                             <th scope="col">No Transaksi</th>
                             <th scope="col">Total</th>
+                            <th scope="col">Bayar</th>
+                            <th scope="col">Kembalian</th>
                             <th scope="col">Tanggal</th>
                             <th scope="col">Detail</th>
                         </tr>
@@ -90,6 +92,8 @@ $transaksi = query("SELECT * FROM thtransaksi WHERE id_user = '$id_user' ORDER B
                             <tr>
                                 <td><?= $trans['no_trans']; ?></td>
                                 <td><?= $trans['total']; ?></td>
+                                <td><?= $trans['bayar']; ?></td>
+                                <td><?= $trans['kembalian']; ?></td>
                                 <td><?= $trans['tanggal']; ?></td>
                                 <td><a href='detail.php?no_trans=<?= $notrans; ?>'
                                         style="text-decoration: none; color: green;"><i class="fas fa-eye link-success"></i>
