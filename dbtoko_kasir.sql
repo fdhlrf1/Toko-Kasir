@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Apr 2025 pada 05.48
+-- Waktu pembuatan: 10 Apr 2025 pada 06.38
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -121,7 +121,7 @@ CREATE TABLE `tuser` (
 INSERT INTO `tuser` (`id_user`, `username`, `nama_toko`, `email`, `password`) VALUES
 (9, 'fadhilrafi10', 'Sumber Makmur Rezeki', 'fadhilrafi10@gmail.com', '$2y$10$AeLo/czx0Un41dat5mVpreyywwZy17vHZw9v/4beljhsKWM/BCGhO'),
 (12, 'rafifauzan', 'Jaya Elektronik', 'rafi@gmail.com', '$2y$10$..kV4v0Asu2f9s4kPXHUmeJC5lLgKMLm30n/y8ihDRDV/myx6xchK'),
-(13, 'kasir', 'Warung Abadi', 'kasir@gmail.com', '$2y$10$qceMJF3Phz.2UjJd5.xvguiB5lJFqValbEisd1WFAuncctPNXaEQ2');
+(13, 'kasir', 'Warung Abadi', 'kasir@mail.com', '$2y$10$qceMJF3Phz.2UjJd5.xvguiB5lJFqValbEisd1WFAuncctPNXaEQ2');
 
 --
 -- Indexes for dumped tables
