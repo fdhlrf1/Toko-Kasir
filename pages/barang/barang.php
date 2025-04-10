@@ -11,7 +11,7 @@ $databarang = query(
 
 //tombol cari di klik
 if (isset($_POST["cari"])) {
-    $databarang = cari($_POST["keyword"]);
+    $databarang = cari($_POST["keyword"], $id_user);
 }
 
 
@@ -39,20 +39,20 @@ if (isset($_POST["cari"])) {
 
 
     <style>
-        .form-control {
-            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
-        }
+    .form-control {
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+    }
 
-        .search-container {
-            max-width: 400px;
-            /* Sesuaikan dengan lebar maksimum yang diinginkan */
+    .search-container {
+        max-width: 400px;
+        /* Sesuaikan dengan lebar maksimum yang diinginkan */
 
-        }
+    }
 
-        .search-container .form-control {
-            flex: 1;
-            /* Membuat input mengambil sisa ruang yang tersedia */
-        }
+    .search-container .form-control {
+        flex: 1;
+        /* Membuat input mengambil sisa ruang yang tersedia */
+    }
     </style>
 </head>
 
@@ -138,31 +138,31 @@ if (isset($_POST["cari"])) {
                     <tbody class="">
                         <?php $i = 1; ?>
                         <?php foreach ($databarang as $barang) : ?>
-                            <tr>
-                                <th scope="row"><?= $i; ?></th>
-                                <td>
-                                    <img src="../../uploads/<?= $barang["gambar"]; ?>" width="100">
-                                </td>
-                                <td><?= $barang["nama"]; ?></td>
-                                <td><?= $barang["kd_barang"]; ?></td>
-                                <td><?= $barang["hr_awal"]; ?></td>
-                                <td><?= $barang["hr_jual"]; ?></td>
-                                <td><?= $barang["stok"]; ?></td>
-                                <td>
-                                    <a href="ubah.php?kd_barang=<?= $barang['kd_barang']; ?>"
-                                        style="text-decoration: none; color: black;"><i
-                                            class="fas fa-edit icon link-black"></i>
-                                        Edit</a>
-                                    <div class="mr-2"></div>
-                                    <a href="hapus.php?kd_barang=<?= $barang['kd_barang']; ?>"
-                                        onclick="return confirm('yakin?')" style="text-decoration: none; color: red;"><i
-                                            class="fas fa-trash-alt icon link-danger"></i> Hapus</a>
-                                </td>
+                        <tr>
+                            <th scope="row"><?= $i; ?></th>
+                            <td>
+                                <img src="../../uploads/<?= $barang["gambar"]; ?>" width="100">
+                            </td>
+                            <td><?= $barang["nama"]; ?></td>
+                            <td><?= $barang["kd_barang"]; ?></td>
+                            <td><?= $barang["hr_awal"]; ?></td>
+                            <td><?= $barang["hr_jual"]; ?></td>
+                            <td><?= $barang["stok"]; ?></td>
+                            <td>
+                                <a href="ubah.php?kd_barang=<?= $barang['kd_barang']; ?>"
+                                    style="text-decoration: none; color: black;"><i
+                                        class="fas fa-edit icon link-black"></i>
+                                    Edit</a>
+                                <div class="mr-2"></div>
+                                <a href="hapus.php?kd_barang=<?= $barang['kd_barang']; ?>"
+                                    onclick="return confirm('yakin?')" style="text-decoration: none; color: red;"><i
+                                        class="fas fa-trash-alt icon link-danger"></i> Hapus</a>
+                            </td>
 
-                            </tr>
+                        </tr>
                     </tbody>
                     <?php $i++; ?>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </table>
 
             </div>

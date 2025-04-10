@@ -339,13 +339,15 @@ function kurangiStok($kd_barang, $jumlah)
 }
 
 
-function cari($keyword)
+function cari($keyword, $id_user)
 {
-    $query = "SELECT * FROM tbarang 
-              WHERE kd_barang LIKE '%$keyword%' 
+    $query = "SELECT * FROM tbarang
+              WHERE id_user = $id_user AND (
+              kd_barang LIKE '%$keyword%' 
               OR nama LIKE '%$keyword%' 
               OR hr_awal LIKE '%$keyword%' 
               OR hr_jual LIKE '%$keyword%' 
-              OR stok LIKE '%$keyword%'";
+              OR stok LIKE '%$keyword%')";
+
     return query($query);
 }
